@@ -1,0 +1,163 @@
+.settings-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.settings-header {
+  margin-bottom: 30px;
+}
+
+.settings-header h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.settings-header p {
+  color: #718096;
+  font-size: 14px;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 1200px) {
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.settings-card, .info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.app.dark-mode .settings-card,
+.app.dark-mode .info-card {
+  background: #2d3748;
+  color: #e2e8f0;
+}
+
+.settings-card h2, .info-card h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.setting-group {
+  margin-bottom: 20px;
+}
+
+.setting-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  color: #667eea;
+}
+
+.setting-group input[type="text"],
+.setting-group input[type="number"],
+.setting-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.app.dark-mode .setting-group input,
+.app.dark-mode .setting-group select {
+  background: #1a202c;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.setting-group.checkbox label {
+  display: flex;
+  align-items: center;
+  text-transform: none;
+  color: #4a5568;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.app.dark-mode .setting-group.checkbox label {
+  color: #cbd5e0;
+}
+
+.setting-group.checkbox input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.btn-save {
+  width: 100%;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-save:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.info-section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.app.dark-mode .info-section {
+  border-bottom-color: #4a5568;
+}
+
+.info-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.info-section h3 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.info-section p {
+  font-size: 13px;
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.info-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-section li {
+  font-size: 13px;
+  padding: 4px 0;
+  line-height: 1.5;
+}
