@@ -1,0 +1,69 @@
+{
+  "name": "test-automation-studio",
+  "version": "1.0.0",
+  "description": "Professional Desktop Test Automation Studio - Generate & Execute Tests with Selenium, Playwright, and More",
+  "main": "public/electron.js",
+  "homepage": "./",
+  "author": "Akash Thatti",
+  "license": "MIT",
+  "scripts": {
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test",
+    "electron-dev": "concurrently \"npm run react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-build": "npm run react-build && electron-builder",
+    "build": "npm run react-build && npm run electron-build",
+    "build-win": "npm run react-build && electron-builder --win --publish=never",
+    "dev": "npm run electron-dev",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "axios": "^1.6.0",
+    "uuid": "^9.0.0",
+    "recharts": "^2.10.0",
+    "date-fns": "^2.30.0",
+    "lodash": "^4.17.21",
+    "selenium-webdriver": "^4.13.0",
+    "playwright": "^1.40.0",
+    "prismjs": "^1.29.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/jest-dom": "^6.1.0"
+  },
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4",
+    "concurrently": "^8.2.0",
+    "wait-on": "^7.0.1",
+    "cross-env": "^7.0.3"
+  },
+  "build": {
+    "appId": "com.testautomationstudio.app",
+    "productName": "Test Automation Studio",
+    "files": [
+      "build/",
+      "public/electron.js",
+      "node_modules/"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Test Automation Studio"
+    }
+  }
+}
