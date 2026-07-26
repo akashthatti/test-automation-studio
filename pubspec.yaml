@@ -1,0 +1,25 @@
+name: Test Automation Studio
+author: Akash Thatti
+description: Professional Desktop Test Automation Tool
+version: 1.0.0
+license: MIT
+repository: https://github.com/akashthatti/test-automation-studio
+bugTracker: https://github.com/akashthatti/test-automation-studio/issues
+topics:
+  - test-automation
+  - testing
+  - selenium
+  - playwright
+  - desktop-app
+  - electron
+  - react
+keywords:
+  - automation
+  - testing
+  - test-framework
+  - code-generation
+  - qa
+  - selenium-webdriver
+  - playwright
+  - cypress
+  - puppeteer
