@@ -1,7 +1,7 @@
 {
   "name": "test-automation-studio",
-  "version": "1.0.0",
-  "description": "Professional Desktop Test Automation Studio - Generate & Execute Tests with Selenium, Playwright, and More",
+  "version": "2.0.0",
+  "description": "Professional Desktop Test Automation Studio Pro - AI-Powered Test Generation with Advanced Automation Support",
   "main": "public/electron.js",
   "homepage": "./",
   "author": "Akash Thatti",
@@ -14,6 +14,8 @@
     "electron-build": "npm run react-build && electron-builder",
     "build": "npm run react-build && npm run electron-build",
     "build-win": "npm run react-build && electron-builder --win --publish=never",
+    "build-mac": "npm run react-build && electron-builder --mac --publish=never",
+    "build-linux": "npm run react-build && electron-builder --linux --publish=never",
     "dev": "npm run electron-dev",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
@@ -32,21 +34,29 @@
     "prismjs": "^1.29.0",
     "react-syntax-highlighter": "^15.5.0",
     "@testing-library/react": "^14.0.0",
-    "@testing-library/jest-dom": "^6.1.0"
+    "@testing-library/jest-dom": "^6.1.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-modal": "^3.16.1",
+    "react-icons": "^4.12.0",
+    "framer-motion": "^10.16.0",
+    "zustand": "^4.4.0"
   },
   "devDependencies": {
     "electron": "^27.0.0",
     "electron-builder": "^24.6.4",
     "concurrently": "^8.2.0",
     "wait-on": "^7.0.1",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "electron-is-dev": "^1.2.0"
   },
   "build": {
     "appId": "com.testautomationstudio.app",
-    "productName": "Test Automation Studio",
+    "productName": "Test Automation Studio Pro",
     "files": [
       "build/",
       "public/electron.js",
+      "public/preload.js",
       "node_modules/"
     ],
     "directories": {
@@ -55,15 +65,26 @@
     "win": {
       "target": [
         "nsis",
-        "portable"
-      ]
+        "portable",
+        "msi"
+      ],
+      "certificateFile": null,
+      "signingHashAlgorithms": ["sha256"]
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "Test Automation Studio"
+      "shortcutName": "Test Automation Studio Pro"
+    },
+    "mac": {
+      "target": ["dmg", "zip"],
+      "category": "public.app-category.developer-tools"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "category": "Development"
     }
   }
 }
